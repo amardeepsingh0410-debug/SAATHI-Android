@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAATHI — Cashbook</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#082d5b">
+<link rel="stylesheet" href="styles.css">
+<style>.moduleHeader{display:none!important}</style></head>
+<body>
+<div class="app">
+<header class="moduleHeader"><button class="icon" id="menuBtn" aria-label="Menu">☰</button><div class="brand"><b>Cashbook</b></div><button class="icon" aria-label="Notifications">♧</button></header>
+<main>
+<section id="profilesView">
+<div class="heading"><button class="primary" id="addProfileBtn">＋ Add Profile</button></div>
+<div id="profiles" class="profile-list"></div>
+</section>
+<section id="profileView" class="hidden">
+<div class="heading"><button class="back" id="backBtn">←</button><h1 id="profileTitle">Profile</h1><button class="small" id="editProfileBtn">Edit</button></div>
+<div class="summary-grid">
+<div class="summary cashin"><span>CASH IN</span><strong id="cashInTotal">₹0</strong></div>
+<div class="summary cashout"><span>CASH OUT</span><strong id="cashOutTotal">₹0</strong></div>
+</div>
+<div class="balance">TOTAL BALANCE: <b id="balanceTotal">₹0</b></div>
+<div class="actions"><button class="cashin-btn" id="cashInBtn">＋ CASH IN</button><button class="cashout-btn" id="cashOutBtn">－ CASH OUT</button></div>
+<section class="history-section"><h2>History</h2><div id="historyList"></div></section>
+</section>
+
+</main>
+</div>
+<div class="modal hidden" id="modal">
+<div class="dialog"><div class="heading"><h2 id="modalTitle">Add Profile</h2><button class="icon close" id="closeModal">×</button></div><form id="entryForm">
+<div id="profileFields"><label>Name</label><input id="profileName" required placeholder="Enter profile name"></div>
+<div id="transactionFields" class="hidden">
+<label>Title</label><input id="entryTitle" placeholder="Enter title" required>
+<label>Amount (₹)</label><input id="entryAmount" type="number" min="0.01" step="0.01" required placeholder="Enter amount">
+<label>Payment Mode</label><div class="mode"><label><input type="radio" name="mode" value="Cash" checked> Cash</label><label><input type="radio" name="mode" value="UPI"> UPI</label></div>
+<div class="date-time"><div><label>Date</label><input id="entryDate" type="date" required></div><div><label>Time</label><input id="entryTime" type="time" required></div></div>
+</div>
+<div class="dialog-actions"><button type="button" class="secondary" id="cancelBtn">Cancel</button><button class="primary" id="saveBtn" type="button" onclick="handleSave()">Save</button></div>
+</form></div>
+</div>
+<script src="app.js"></script>
+</body></html>

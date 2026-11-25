@@ -1,0 +1,1 @@
+SAATHI integrated prototype. Dashboard brand header is only on Dashboard. Module pages use a single compact navy header row with Back arrow, module icon, and title. Duplicate module headings are removed from module landing screens. English-only UI. This remains a local prototype; data is stored in browser localStorage and no cloud sync is included.
